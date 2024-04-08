@@ -4,13 +4,20 @@
 
 ### Dependencies
 
-**Note**: The public `time_machine_pipeline.py` does NOT support passive DNS feature. If you want to run it correctly, you need to make a file named `get_subdomain.py`.
+**Note**: The public `time_machine_pipeline.py` does NOT support passive DNS feature. If you want to run it correctly, you need to create a file named `get_subdomain.py`.
 
 You can use `pip install -r requirements.txt` to install all the dependencies (no need for `requests` if just using `time_machine.py` independently). You may need to install Firefox for Playwright, by `playwright install firefox`.
+
+### Code Details
+
+1. `time_machine.py`: core program for snapshotting the website(s), with the screenshots and the network traces.
+   + You can use `python3 time_machine.py "ngrok.com" "ngrok" "./test/" --is_domain` for test. It will create a new directory named `test` (if it doesn't already exist) to store the collected snapshots.
+2. `time_machine_pipeline.py`: the pipeline containing PFW domain names discovering (not publicly accessed), aliveness test, and PFW snapshotting.
 
 ### Usage
 
 ```bash
+# get_subdomain.py is needed by time_machine_pipeline.py, details are in the section Dependencies.
 touch get_subdomain.py
 python3 time_machine_pipeline.py "./config_template.yaml" --date_dir "./test/" --alive_seed_file <(echo "ngrok.com") --steps 6
 ```
@@ -36,21 +43,9 @@ test
    └── 20240101
 ```
 
-### Code Details
-
-**`time_machine.py`**
-
-`time_machine.py` can be used independently. You can use `python3 time_machine.py "ngrok.com" "ngrok" "./test/" --is_domain` for test. It will create a new directory named `test` (if it doesn't already exist) to store the collected snapshots, including screenshots and the network traces. If this failed, you may need to install Firefox for Playwright.
-
-You can get help by `python3 time_machine.py -h`.
-
-**`time_machine_pipeline.py`**
-
-The pipeline is PFW domain names discovering (not publicly accessed), aliveness test and PFW snapshotting (powered by `time_machine.py`), and you can select the step(s) you want to do by option `--steps`/`-ss`. All help can be gotten by `python3 time_machine_pipeline.py -h`
-
-You can test it by `python3 time_machine_pipeline.py "./config_template.yaml" --data_dir "./test/" --alive_seed_file <(echo "ngrok.com") --steps 6`.
-
-Some notes:
+**Notes**:
++ You can get help by using `-h` option, e.g., `python3 time_machine.py -h`.
 + `config_template.yaml` should be updated, especially `provider` field.
 + `--alive_seed_file` should be provided by a file with domains you want to snapshot.
 + Option `--data_dir` is prioritized over the `data_dir` field in `config_template.yaml`.
++ You can select the step(s) you want `time_machine_pipeline.py` to do by option `--steps`.

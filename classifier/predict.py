@@ -24,12 +24,19 @@ os.environ["WANDB_DISABLED"] = "true"
 manual_random_seed = 102 # just for program to run, do anything for prediction
 
 logger = logging.getLogger()
-fhandler = logging.FileHandler(filename='/tmp/test.log', mode='a')
-formatter = logging.Formatter("%(asctime)s %(levelname)s %(message)s")
-fhandler.setFormatter(formatter)
-logger.addHandler(fhandler)
-logger.setLevel(logging.DEBUG)
+# fhandler = logging.FileHandler(filename='/tmp/test.log', mode='a')
+# formatter = logging.Formatter("%(asctime)s %(levelname)s %(message)s")
+# fhandler.setFormatter(formatter)
+# logger.addHandler(fhandler)
+logger.setLevel(logging.INFO)
 logging.info(f'Logger inited.')
+
+parser = argparse.ArgumentParser()
+parser.add_argument("--model_path", type=str, default="/path/to/model/dir", help="model path")
+parser.add_argument("--data_pkl", type=str, default="/path/to/data", help="data(in pkl format)")
+parser.add_argument("--data_csv", type=str, default="/path/to/data.csv", help="data(in csv format) for domain info")
+parser.add_argument("--output_csv", type=str, default="/path/to/output.csv", help="output csv file")
+args = parser.parse_args()
 
 class CustomDataset(torch.utils.data.Dataset):
     def __init__(self, df, processor, images_path, le, is_pred=False):
@@ -108,7 +115,7 @@ le.fit(label_list)
 logging.info("le(LabelEncoder) defined.")
 
 model = LayoutLMv2ForSequenceClassification.from_pretrained(
-    "/path/to/your/model",
+    args.model_path,
     num_labels=len(label_list)
 )
 logging.info("model defined.")
@@ -153,13 +160,7 @@ if __name__ == "__main__":
     """
     Just a simple example to show how to predict from dataset(pkl) with trained model.
     You can get the pkl dataset by file `dataset.py`.
-    Split to two files because of the implementation in the research environment limitation.
     """
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--data_pkl", type=str, default="/path/to/data", help="data(in pkl format)")
-    parser.add_argument("--data_csv", type=str, default="/path/to/data.csv", help="data(in csv format) for domain info")
-    parser.add_argument("--output_csv", type=str, default="/path/to/output.csv", help="output csv file")
-    args = parser.parse_args()
     # load dataset
     with open(args.data_pkl, 'rb') as f:
         dataset = pickle.load(f)

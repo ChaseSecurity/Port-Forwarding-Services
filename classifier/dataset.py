@@ -26,12 +26,21 @@ ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 # Init logging configuration
 logger = logging.getLogger()
-fhandler = logging.FileHandler(filename='/tmp/test.log', mode='a')
-formatter = logging.Formatter("%(asctime)s %(levelname)s %(message)s")
-fhandler.setFormatter(formatter)
-logger.addHandler(fhandler)
+# fhandler = logging.FileHandler(filename='/tmp/test.log', mode='a')
+# formatter = logging.Formatter("%(asctime)s %(levelname)s %(message)s")
+# fhandler.setFormatter(formatter)
+# logger.addHandler(fhandler)
 logger.setLevel(logging.INFO)
 logging.info(f'Logger inited.')
+
+parser = argparse.ArgumentParser()
+parser.add_argument("--screenshots_dir", type=str, help="the dir of the screenshots", default="/")
+parser.add_argument("--target_dir", type=str, help="the dir of the target pkl files", default="/path/to/your/target")
+parser.add_argument("--start_idx", type=int, default=0)
+parser.add_argument("--end_idx", type=int, default=800, help="No the end one!")
+parser.add_argument("--process_num", type=int, default=4)
+parser.add_argument("--file", type=str)
+args = parser.parse_args()
 
 # Define Dataset format
 class CustomDataset(torch.utils.data.Dataset):
@@ -166,15 +175,6 @@ logging.info("Function init_dataset() and task() defined.")
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--screenshots_dir", type=str, help="the dir of the screenshots", default="/")
-    parser.add_argument("--target_dir", type=str, help="the dir of the target pkl files", default="/path/to/your/target")
-    parser.add_argument("--start_idx", type=int, default=0)
-    parser.add_argument("--end_idx", type=int, default=800, help="No the end one!")
-    parser.add_argument("--process_num", type=int, default=4)
-    parser.add_argument("--file", type=str)
-    args = parser.parse_args()
-
     # Init the lock and the multiprocessing pool
     lock = multiprocessing.Manager().Lock()
     logging.info(f'Num of processes: {args.process_num}')
