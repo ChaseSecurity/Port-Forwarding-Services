@@ -1,0 +1,20 @@
+---
+# data dir
+data_dir: "/path/to/data/dir/"
+# Introduce provider-specific logic in the code
+provider: "ngrok"
+# specify date if needed, instead of today
+date_tag: 
+# params for pdns tasks
+pdns:
+  time_delta_in_days: 7
+  access_token: ""
+  # TODO assign it with the file containing the list of apex domains for a given PFS provider
+  domain_file:  ""
+  thread_count: 10
+alive:
+  thread_count: 30
+  timeout: 10
+
+screenshot:
+  process_count: 5
