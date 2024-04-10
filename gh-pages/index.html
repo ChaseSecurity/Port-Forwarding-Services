@@ -1,0 +1,495 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="The first comprehensive security study on representative port forwarding services(PFS).">
+  <meta name="keywords" content="Port Forwarding Services, Cyber Security">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Port Forwarding Services Are Forwarding Security Risks</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-"></script> -->
+  <!-- <script> -->
+  <!--   window.dataLayer = window.dataLayer || []; -->
+
+  <!--   function gtag() { -->
+  <!--     dataLayer.push(arguments); -->
+  <!--   } -->
+
+  <!--   gtag('js', new Date()); -->
+
+  <!--   gtag('config', 'G-'); -->
+  <!-- </script> -->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.ico">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Port Forwarding Services Are Forwarding Security Risks</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+	      Haoyuan Wang<sup>1</sup>,
+	    </span>
+            <span class="author-block">
+              Yue Xue<sup>1</sup>,
+	    </span>
+            <span class="author-block">
+              Xuan Feng<sup>2</sup>,
+            </span>
+            <span class="author-block">
+              Chao Zhou<sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://xianghang.me">Xianghang Mi</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of Science and Technology of China,</span>
+            <span class="author-block"><sup>2</sup>Microsoft Research Asia</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2403.16060.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2403.16060"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block"> -->
+              <!--   <a href="#" -->
+              <!--      class="external-link button is-normal is-rounded is-dark"> -->
+              <!--     <span class="icon"> -->
+              <!--         <i class="far fa-images"></i> -->
+              <!--     </span> -->
+              <!--     <span>Data</span> -->
+              <!--     </a> -->
+	      <!-- </span> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+	    We conduct the first comprehensive security study on representative port forwarding services (PFS), which emerge in recent years and make the web services deployed in internal networks available on the Internet along with better usability but less complexity compared to traditional techniques (e.g., NAT traversal techniques). Our study is made possible through a set of novel methodologies, which are designed to uncover the technical mechanisms of PFS, experiment attack scenarios for PFS protocols, automatically discover and snapshot port-forwarded websites (PFWs) at scale, and classify PFWs into well-observed categories. Leveraging these methodologies, we have observed the widespread adoption of PFS with millions of PFWs distributed across tens of thousands of ISPs worldwide. Furthermore, 32.31% PFWs have been classified into website categories that serve access to critical data or infrastructure, such as, web consoles for industrial control systems, IoT controllers, code repositories, and office automation systems. And 18.57% PFWs didn't enforce any access control for external visitors. Also identified are two types of attacks inherent in the protocols of Oray (one well-adopted PFS provider), and the notable abuse of PFSes by malicious actors in activities such as malware distribution, botnet operation and phishing.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <!-- <div class="columns is-centered has-text-centered"> -->
+    <!--   <div class="column is-four-fifths"> -->
+    <!--     <h2 class="title is-3">Video</h2> -->
+    <!--     <div class="publication-video"> -->
+    <!--       <iframe src="#" -->
+    <!--               frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+    <!--     </div> -->
+    <!--   </div> -->
+    <!-- </div> -->
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+<section class="section" id="PFS">
+  <div class="container is-max-desktop content">
+    <div class="columns is-centered">
+      <div class="column is-full">
+	<h2 class="title is-3">Port Forwarding Services</h2>
+	<p>
+	  Port Forwarding Services (PFS) are designed as an out-of-the-box service to help ordinary users carry out port forwarding tasks. It can circumvent the necessity of configuring NAT traversal techniques. In the scenario of a PFS, a PFS agent is deployed to be co-located inside the same private network with the internal network services to be exposed/forwarded, and is instructed to proactively establish one or more persistent tunnels to a PFS server. After the port forwarding tunnels are established, the traffic visiting the PFS server will be redirected to the PFS agent, and then forwarded to the internal network services.
+	</p>
+	<!-- The figure for PFS scenario with 80% width -->
+	<div class="container is-max-desktop content has-text-centered">
+	  <div class="columns is-centered">
+	    <div class="column is-four-fifths">
+	      <figure class="image">
+		<img src="./static/images/pfs_scenario.svg" alt="PFS scenario">
+	      </figure>
+	    </div>
+	  </div>
+	  <!-- <div class="subtitle is-6">The PFS Usage Scenario</div> -->
+	</div>
+      </div>
+    </div>
+
+    
+    <div class="columns is-centered">
+      <div class="column is-full">
+	<h2 class="title is-3">Representative PFS Protocols</h2>
+
+	<h3 class="title is-4">Ngrok Protocol</h3>
+	<div class="columns is-centered">
+	  <!-- <div class="column is-two-thirds"> -->
+	  <div class="column is-four-fifths">
+	    <figure class="image">
+	      <img src="./static/images/ngrok_protocol.svg" alt="Ngrok Protocol">
+	    </figure>
+	  </div>
+	  <!-- <div class-"column is-one-third"> -->
+	</div>
+	<div class="columns is-centered">
+	  <div class="column">
+	    <p>Once the Ngrok agent program is started, it connects to the Ngrok server (<i>tunnel.ngrok.com</i>) through a single persistent HTTPS connection, which serves both as <strong>the data plane</strong> relaying traffic to and from the internal web service, and as <strong>the control plane</strong> transmitting control data (e.g., the authorization token) between the agent and the Ngrok server. When multiple PFWs are forwarded by the same Ngrok agent, they <strong>share the same HTTPS tunnel connection</strong>. Given the tunnel connection setup, when an HTTP request arrives at the agent, it will be further forwarded to the internal web server through a plaintext HTTP connection.</p>
+	  </div>
+	</div>
+	
+      	<h3 class="title is-4">Oray Protocol</h3>
+	<div class="columns is-centered">
+	  <div class="column is-four-fifths">
+	    <figure class="image">
+	      <img src="./static/images/oray_protocol.svg" alt="Oray Protocol">
+	    </figure>
+	  </div>
+	</div>
+	<div class="columns is-centered">
+	  <div class="column">
+	    <p>Oray implements a more complicated interaction process so as to support more flexible functionalities, such as dynamically updating the port forwarding rules without the need of stopping and restarting the Oray agent.</p>
+	    <!-- <br> -->
+	    <p>The Oray agent first queries the Oray <strong>control</strong> server (<i>hsk-embed.oray.com</i>) through an HTTPS connection, and extracts a set of configurations including which local service to forward traffic to, which Oray data server to connect to set up the tunnel connection, among others. Upon these configurations, the agent moves to setup a long-lived TCP connection with the specified Oray data server as <strong>the data tunnel</strong>, to relay HTTP traffic between the internal web service and the external visitor. <!-- The Oray agent will also periodically send heartbeat UDP packets to the Oray data server. --> <!-- <strong>However, the relayed HTTP traffic is not weell protected, giving attackers the opportunity to do a full-fledged man-in-the-middle (MITM) attack.</strong> --></p>
+	    <p>Oray also provides a web console for its customers to update the tunneling configurations, e.g., change which local service to forward the traffic to without interrupting the tunnel. To achieve this, the agent sets up another long-lived TCP connection with another Oray control server and uses it as the control plane for the server to push configuration updates back to the agent.</p>
+	  </div>
+	</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="PFW">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3">Port-Forwarded Website</h2>
+    <p>To get a deep understanding of the PFS ecosystem, it is critical to know what websites have been tunnelled by PFS, especially considering that port forwarding a website is the most common use case of port forwarding services. We refer to such websites as port-forwarded websites (PFWs).</p>
+    <p>
+      We design a PFW collector to automatically discover PFW domain names through querying passive DNS, and snapshot the discovered PFWs in an efficient and distributed manner.
+      To understand what kinds of websites have been exposed as PFWs, a PFW classifier, with 95% of the micro average accuracy/recall/precision, is tailored for PFW categories.
+    </p>
+    <p>
+      Leveraging these methodologies, we have observed the widespread adoption of PFS with millions of PFWs distributed across tens of thousands of ISPs worldwide. For categories, 32.31% PFWs have been classified into website categories that serve access to critical data or infrastructure, such as, web consoles for industrial control systems, IoT controllers, code repositories, and office automation systems.
+      Here is the detailed statistics about the distribution of PFWs across their categories.
+    </p>
+
+    <div class="columns is-centered">
+      <div class="column is-three-fifths">
+	<table class="table is-narrow">
+	  <!-- <caption>The distribution of reachable PFWs across predefined categories.</caption> -->
+	  <thead>
+	    <tr>
+	      <th class="has-text-left">Category</th>
+	      <th>Oray</th>
+	      <th>Ngrok</th>
+	      <th>Both</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td class="has-text-left">Industrial Control System (ICS)</td>
+	      <td>1.87%</td>
+	      <td>1.25%</td>
+	      <td>1.83%</td>
+	    </tr>
+	    <tr>
+	      <td class="has-text-left">IoT Controller and Devices (IoT)</td>
+	      <td>0.98%</td>
+	      <td>3.47%</td>
+	      <td>1.11%</td>
+	    </tr>
+	    <tr>
+	      <td class="has-text-left">Network Devices</td>
+	      <td>3.54%</td>
+	      <td>2.38%</td>
+	      <td>3.48%</td>
+	    </tr>
+	    <tr>
+	      <td class="has-text-left">Remote Desktop</td>
+	      <td>1.24%</td>
+	      <td>0.02%</td>
+	      <td>1.18%</td>
+	    </tr>
+	    <tr>
+	      <td class="has-text-left">Office Automation (OA)</td>
+	      <td>15.04%</td>
+	      <td>5.42%</td>
+	      <td>14.56%</td>
+	    </tr>
+	    <tr>
+	      <td class="has-text-left">Data Store</td>
+	      <td>2.35%</td>
+	      <td>4.69%</td>
+	      <td>2.46%</td>
+	    </tr>
+	    <tr>
+	      <td class="has-text-left">Code Repository</td>
+	      <td>0.62%</td>
+	      <td>4.00%</td>
+	      <td>0.79%</td>
+	    </tr>
+	    <tr>
+	      <td class="has-text-left">Network-Attached Storage (NAS)</td>
+	      <td>0.93%</td>
+	      <td>1.15%</td>
+	      <td>0.94%</td>
+	    </tr>
+	    <tr>
+	      <td class="has-text-left">Webserver Default Page</td>
+	      <td>5.83%</td>
+	      <td>8.38%</td>
+	      <td>5.96%</td>
+	    </tr>
+	    <tr>
+	      <td class="has-text-left">Blank Page</td>
+	      <td>68.37%</td>
+	      <td>13.70%</td>
+	      <td>65.61%</td>
+	    </tr>
+	    <tr>
+	      <td class="has-text-left">Others</td>
+	      <td>15.07%</td>
+	      <td>64.85%</td>
+	      <td>17.57%</td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+    </div>
+
+    <p>
+      We also manually studied cases of these categories, with a focus on identifying their subcategories and understanding their access control mechanisms. Overall, we found that 18.57% of PFWs didn't enforce any access control for external visitors, which could lead to severe security risks.
+    </p>
+  </div>
+</section>
+
+<section class="section" id="Threat">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3">Threat Intelligence Analysis</h2>
+    <p>
+      In order to provide a comprehensive analysis of the extent to which port forwarding services have been abused in various malicious activities, we leverage VirusTotal to analyze the threat intelligence of PFW domains and server IPs.
+    </p>
+    <p>
+      In a result, we can conclude with high confidence that port forwarding services are being abused to a concerning extent and in various malicious activities, particularly, tunneling communications for RAT programs, malware distribution, and phishing & fraud.
+      <!-- Also, malicious PFWs can emerge and disappear very quickly while the underlying attacking servers are kept hidden, which renders many existing defensive mechanisms less effective, e.g., the reporting of a PFS IP:port as a C2 server IoC can soon become ineffective as the attacker can quickly migrate to a new tunnel. -->
+      Here are some details.
+    </p>
+
+    <div class="columns is-centered">
+      <div class="column is-three-fifths">
+	<table class="table is-narrow">
+	  <caption>Threat stats of PFW domains as learned from VirusTotal</caption>
+	  <thead>
+	    <tr>
+	      <th rowspan="2">PFS</th>
+	      <th rowspan="2">Queried</th>
+	      <th rowspan="2">Analyzed</th>
+	      <th colspan="3">Ratio of Malicious PFW Domains</th>
+	    </tr>
+	    <tr>
+	      <th>≥ 1</th>
+	      <th>≥ 5</th>
+	      <th>≥ 10</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>Ngrok</td>
+	      <td>1.84M</td>
+	      <td>30K</td>
+	      <td>2.31%</td>
+	      <td>1.23%</td>
+	      <td>0.45%</td>
+	    </tr>
+	    <tr>
+	      <td>Oray</td>
+	      <td>1.51M</td>
+	      <td>25K</td>
+	      <td>1.14%</td>
+	      <td>0.12%</td>
+	      <td>0.04%</td>
+	    </tr>
+	    <tr>
+	      <td>Both</td>
+	      <td>3.34M</td>
+	      <td>55K</td>
+	      <td>1.78%</td>
+	      <td>0.73%</td>
+	      <td>0.26%</td>
+	    </tr>
+	  </tbody>
+	  <!-- <tfoot> -->
+	  <!--   <tr> -->
+	  <!--     <td colspan="6"> -->
+	  <!-- 	Note: A PFW domain is considered as malicious as long as it has been alarmed by one or more detection engines underpinning VirusTotal. "≥ X" denotes the ratio of malicious PFW domains that have been alarmed by X or more detection engines, over all the analyzed PFWs. -->
+	  <!--     </td> -->
+	  <!--   </tr> -->
+	  <!-- </tfoot> -->
+	</table>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-three-fifths">
+	<table class="table is-narrow">
+	  <caption>Threat stats of PFW server IPs as learned from VirusTotal</caption>
+	  <thead>
+	    <tr>
+	      <th rowspan="2">PFS</th>
+	      <th rowspan="2">Queried</th>
+	      <th rowspan="2">Analyzed</th>
+	      <th colspan="3">Ratio of Malicious PFW IPs</th>
+	    </tr>
+	    <tr>
+	      <th>≥ 1</th>
+	      <th>≥ 5</th>
+	      <th>≥ 10</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>Ngrok</td>
+	      <td>189</td>
+	      <td>142</td>
+	      <td>76.06%</td>
+	      <td>69.01%</td>
+	      <td>55.63%</td>
+	    </tr>
+	    <tr>
+	      <td>Oray</td>
+	      <td>28K</td>
+	      <td>28K</td>
+	      <td>2.88%</td>
+	      <td>0.51%</td>
+	      <td>0.02%</td>
+	    </tr>
+	    <tr>
+	      <td>Both</td>
+	      <td>28K</td>
+	      <td>28K</td>
+	      <td>3.25%</td>
+	      <td>0.86%</td>
+	      <td>0.30%</td>
+	    </tr>
+	  </tbody>
+	  <!-- <tfoot> -->
+	  <!--   <tr> -->
+	  <!--     <td colspan="6"> -->
+	  <!-- 	Note: A PFW server IP is considered malicious as long as it has been alarmed by one or more detection engines underpinning VirusTotal. "≥ X" denotes the ratio of malicious PFW IPs that have been alarmed by X or more detection engines, over all the analyzed PFWs. -->
+	  <!--     </td> -->
+	  <!--   </tr> -->
+	  <!-- </tfoot> -->
+	</table>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" id="Vulnerabilities">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3">Vulnerabilities</h2>
+    <p>
+      We have identified <strong>a set of protocol vulnerabilities in Oray's PFS implementation</strong>, which incur non-negligible security risks to both PFWs and the local networks on which PFWs are hosted. <strong>The identified security vulnerabilities have been responsibly disclosed to Oray with acknowledgments received.</strong>
+    </p>
+    <p>
+      <strong>Against the data plane communication</strong>&nbsp;&nbsp; The tunnel between the Oray data server and the Oray agent utilizes a customized application protocol over TCP, by adopting the HTTP protocol with a message authentication code (MAC). However, the MAC can be easily calculated without the need of knowing any secrets, as it only checks the length of the payload. This allows any intermediate hop between the Oray agent and the Oray server to perform a man-in-the-middle attack.
+    </p>
+    <p>
+      <strong>Against the control plane communication</strong>&nbsp;&nbsp; When port forwarding rules are initially pulled from the control server, HTTPS is adopted. However, we have found that the Oray agent fails to perform proper server certificate verification, and an MITM attacker can successfully intercept this HTTPS connection and modify all the port forwarding rules that are passed from the control server to the agent. This allows an attacker to use the PFS agent program as a stepping stone to expose internal infrastructure co-located with a PFW.
+    </p>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{wang2024port,
+      title={Port Forwarding Services Are Forwarding Security Risks}, 
+      author={Haoyuan Wang and Yue Xue and Xuan Feng and Chao Zhou and Xianghang Mi},
+      year={2024},
+      eprint={2403.16060},
+      archivePrefix={arXiv},
+      primaryClass={cs.CR}
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+        <p>
+          This website is licensed under a <a rel="license"
+          href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+        Commons Attribution-ShareAlike 4.0 International License</a>.
+      </p>
+      <p>
+        Website source code based on the <a href="https://nerfies.github.io/"> Nerfies</a> project page. If you want to reuse their <a
+        href="https://github.com/nerfies/nerfies.github.io">source code</a>, please credit them appropriately.
+      </p>
+    </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
+
+
