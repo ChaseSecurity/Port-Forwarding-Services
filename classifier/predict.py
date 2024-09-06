@@ -21,7 +21,7 @@ from sklearn.metrics import accuracy_score, recall_score, precision_score, f1_sc
 import random
 
 os.environ["WANDB_DISABLED"] = "true"
-manual_random_seed = 102 # just for program to run, do anything for prediction
+manual_random_seed = 102 # just for program to run, do nothing for prediction
 
 logger = logging.getLogger()
 # fhandler = logging.FileHandler(filename='/tmp/test.log', mode='a')
@@ -120,7 +120,7 @@ model = LayoutLMv2ForSequenceClassification.from_pretrained(
 )
 logging.info("model defined.")
 
-# do anything for prediction
+# do nothing for prediction
 training_args = TrainingArguments(
     learning_rate=5e-5,
     num_train_epochs=10,
