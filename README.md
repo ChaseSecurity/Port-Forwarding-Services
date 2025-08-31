@@ -30,15 +30,14 @@ You can get resulting model from [our Hugging Face repo](https://huggingface.co/
 ## Bibtex
 
 ```
-@INPROCEEDINGS{wang2024port,
-  author={Haoyuan Wang and Yue Xue and Xuan Feng and Chao Zhou and Xianghang Mi},
-  booktitle={2025 IEEE 10th European Symposium on Security and Privacy (EuroS\&P)}, 
-  title={Port Forwarding Services Are Forwarding Security Risks}, 
+@INPROCEEDINGS{wang2025port,
+  author={Wang, Haoyuan and Xue, Yue and Feng, Xuan and Zhou, Chao and Mi, Xianghang},
+  booktitle={2025 IEEE 10th European Symposium on Security and Privacy (EuroS&P)},
+  title={Port Forwarding Services Are Forwarding Security Risks},
   year={2025},
   volume={},
   number={},
-  pages={},
-  keywords={},
-  doi={}
-}
+  pages={289-303},
+  keywords={Office automation;Protocols;Web services;Phishing;Industrial control;Control systems;Malware;Critical infrastructure;Complexity theory;Usability},
+  doi={10.1109/EuroSP63326.2025.00025}}
 ```
