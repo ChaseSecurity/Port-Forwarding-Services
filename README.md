@@ -5,12 +5,14 @@ This is the repository(branch) that contains source code for [the project websit
 If you find the work useful for your work please cite:
 
 ```
-@article{wang2024port,
-      title={Port Forwarding Services Are Forwarding Security Risks}, 
-      author={Haoyuan Wang and Yue Xue and Xuan Feng and Chao Zhou and Xianghang Mi},
-      year={2024},
-      eprint={2403.16060},
-      archivePrefix={arXiv},
-      primaryClass={cs.CR}
-}
+@INPROCEEDINGS{wang2025port,
+  author={Wang, Haoyuan and Xue, Yue and Feng, Xuan and Zhou, Chao and Mi, Xianghang},
+  booktitle={2025 IEEE 10th European Symposium on Security and Privacy (EuroS&P)},
+  title={Port Forwarding Services Are Forwarding Security Risks},
+  year={2025},
+  volume={},
+  number={},
+  pages={289-303},
+  keywords={Office automation;Protocols;Web services;Phishing;Industrial control;Control systems;Malware;Critical infrastructure;Complexity theory;Usability},
+  doi={10.1109/EuroSP63326.2025.00025}}
 ```
